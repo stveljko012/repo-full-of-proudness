@@ -3,7 +3,7 @@ import { TriggerHandler } from './trigger-handler';
 import { MongoCollection } from './models';
 
 
-export const HANDLERS: TriggerHandler[] = [
+export const Index: TriggerHandler[] = [
     new CoolHandler(),
 ];
 
@@ -18,7 +18,7 @@ export const getHandler = (
         return;
     }
 
-    const handler = HANDLERS.find((h) => h.isForCollection(collection));
+    const handler = Index.find((h) => h.isForCollection(collection));
 
     if (!handler) {
         console.warn(
